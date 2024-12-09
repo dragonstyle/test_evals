@@ -4,4 +4,4 @@
 logs/
 __pycache__/
 *.vsix
-olg_logs/
+old_logs/
