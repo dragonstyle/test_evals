@@ -1,0 +1,266 @@
+{
+  "version": 2,
+  "status": "success",
+  "eval": {
+    "run_id": "UaxJ9cQv4NtamLB3uJaW6E",
+    "created": "2024-09-25T09:59:45-04:00",
+    "task": "mytask",
+    "task_id": "L2fY5YRxqpJxayMeR8RJNL",
+    "task_version": 0,
+    "task_file": "sample.py",
+    "task_attribs": {},
+    "task_args": {},
+    "dataset": {
+      "samples": 1,
+      "shuffled": false
+    },
+    "model": "openai/gpt-4o-mini",
+    "model_args": {},
+    "config": {},
+    "packages": {
+      "inspect_ai": "0.3.26.dev81+gef2f9a0"
+    }
+  },
+  "plan": {
+    "name": "plan",
+    "steps": [
+      {
+        "solver": "subtask_solver",
+        "params": {}
+      },
+      {
+        "solver": "fork_solver_parent",
+        "params": {}
+      }
+    ],
+    "config": {
+      "max_connections": 4
+    }
+  },
+  "results": {
+    "total_samples": 1,
+    "completed_samples": 1,
+    "scores": []
+  },
+  "stats": {
+    "started_at": "2024-09-25T09:59:45-04:00",
+    "completed_at": "2024-09-25T09:59:45-04:00",
+    "model_usage": {}
+  },
+  "samples": [
+    {
+      "id": 1,
+      "epoch": 1,
+      "input": "",
+      "target": "",
+      "messages": [
+        {
+          "content": "",
+          "source": "input",
+          "role": "user"
+        }
+      ],
+      "output": {
+        "model": "openai/gpt-4o-mini",
+        "choices": []
+      },
+      "scores": {},
+      "metadata": {
+        "foo2": "bar"
+      },
+      "store": {},
+      "transcript": {
+        "events": [
+          {
+            "timestamp": "2024-09-25T09:59:45.882322-04:00",
+            "event": "sample_init",
+            "sample": {
+              "input": "",
+              "target": "",
+              "id": 1
+            },
+            "state": {
+              "messages": [
+                {
+                  "content": "",
+                  "source": "input",
+                  "role": "user"
+                }
+              ],
+              "tools": [],
+              "tool_choice": null,
+              "store": {},
+              "output": {
+                "model": "openai/gpt-4o-mini",
+                "choices": []
+              },
+              "completed": false,
+              "metadata": {}
+            }
+          },
+          {
+            "timestamp": "2024-09-25T09:59:45.882638-04:00",
+            "event": "step",
+            "action": "begin",
+            "type": "solver",
+            "name": "subtask_solver"
+          },
+          {
+            "timestamp": "2024-09-25T09:59:45.887627-04:00",
+            "event": "subtask",
+            "name": "mysubtask",
+            "input": {
+              "id": "my_subtask"
+            },
+            "result": "",
+            "events": []
+          },
+          {
+            "timestamp": "2024-09-25T09:59:45.887796-04:00",
+            "event": "step",
+            "action": "end",
+            "type": "solver",
+            "name": "subtask_solver"
+          },
+          {
+            "timestamp": "2024-09-25T09:59:45.887822-04:00",
+            "event": "step",
+            "action": "begin",
+            "type": "solver",
+            "name": "fork_solver_parent"
+          },
+          {
+            "timestamp": "2024-09-25T09:59:45.888170-04:00",
+            "event": "subtask",
+            "name": "fork_solver_child",
+            "type": "fork",
+            "input": {
+              "id": "my_fork_child"
+            },
+            "result": null,
+            "events": [
+              {
+                "timestamp": "2024-09-25T09:59:45.888067-04:00",
+                "event": "step",
+                "action": "begin",
+                "type": "solver",
+                "name": "fork_solver_child"
+              },
+              {
+                "timestamp": "2024-09-25T09:59:45.888153-04:00",
+                "event": "state",
+                "changes": [
+                  {
+                    "op": "add",
+                    "path": "/metadata/foo1",
+                    "value": "bar"
+                  }
+                ]
+              },
+              {
+                "timestamp": "2024-09-25T09:59:45.888162-04:00",
+                "event": "step",
+                "action": "end",
+                "type": "solver",
+                "name": "fork_solver_child"
+              }
+            ]
+          },
+          {
+            "timestamp": "2024-09-25T09:59:45.888298-04:00",
+            "event": "subtask",
+            "name": "fork_solver_child2",
+            "type": "fork",
+            "input": {
+              "id": "child2"
+            },
+            "result": null,
+            "events": [
+              {
+                "timestamp": "2024-09-25T09:59:45.888229-04:00",
+                "event": "step",
+                "action": "begin",
+                "type": "solver",
+                "name": "fork_solver_child2"
+              },
+              {
+                "timestamp": "2024-09-25T09:59:45.888285-04:00",
+                "event": "state",
+                "changes": [
+                  {
+                    "op": "add",
+                    "path": "/metadata/foo2",
+                    "value": "bar"
+                  }
+                ]
+              },
+              {
+                "timestamp": "2024-09-25T09:59:45.888292-04:00",
+                "event": "step",
+                "action": "end",
+                "type": "solver",
+                "name": "fork_solver_child2"
+              }
+            ]
+          },
+          {
+            "timestamp": "2024-09-25T09:59:45.888373-04:00",
+            "event": "subtask",
+            "name": "fork_solver_child3",
+            "type": "fork",
+            "input": {
+              "id": "child3"
+            },
+            "result": null,
+            "events": [
+              {
+                "timestamp": "2024-09-25T09:59:45.888317-04:00",
+                "event": "step",
+                "action": "begin",
+                "type": "solver",
+                "name": "fork_solver_child3"
+              },
+              {
+                "timestamp": "2024-09-25T09:59:45.888361-04:00",
+                "event": "state",
+                "changes": [
+                  {
+                    "op": "add",
+                    "path": "/metadata/foo3",
+                    "value": "bar"
+                  }
+                ]
+              },
+              {
+                "timestamp": "2024-09-25T09:59:45.888367-04:00",
+                "event": "step",
+                "action": "end",
+                "type": "solver",
+                "name": "fork_solver_child3"
+              }
+            ]
+          },
+          {
+            "timestamp": "2024-09-25T09:59:45.888469-04:00",
+            "event": "state",
+            "changes": [
+              {
+                "op": "add",
+                "path": "/metadata/foo2",
+                "value": "bar"
+              }
+            ]
+          },
+          {
+            "timestamp": "2024-09-25T09:59:45.888476-04:00",
+            "event": "step",
+            "action": "end",
+            "type": "solver",
+            "name": "fork_solver_parent"
+          }
+        ],
+        "content": {}
+      }
+    }
+  ]
+}

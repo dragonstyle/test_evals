@@ -1,0 +1,332 @@
+{
+  "version": 2,
+  "status": "success",
+  "eval": {
+    "task": "gpqa_diamond",
+    "task_version": 0,
+    "task_file": "gpqa.py",
+    "task_id": "6LF2Lj4BsShs2BXvtYgM3d",
+    "run_id": "JJgYErGH5noJRgryupTcme",
+    "created": "2024-09-09T16:06:34-04:00",
+    "dataset": {
+      "name": "gpqa_diamond",
+      "location": "https://openaipublic.blob.core.windows.net/simple-evals/gpqa_diamond.csv",
+      "samples": 198,
+      "shuffled": false
+    },
+    "model": "openai/gpt-4o-mini",
+    "task_attribs": {},
+    "task_args": {},
+    "model_args": {},
+    "config": {
+      "limit": 1
+    },
+    "packages": {
+      "inspect_ai": "0.3.26.dev81+gef2f9a0"
+    }
+  },
+  "plan": {
+    "name": "plan",
+    "steps": [
+      {
+        "solver": "multiple_choice",
+        "params": {
+          "shuffle": true
+        }
+      }
+    ],
+    "config": {
+      "max_connections": 4,
+      "temperature": 0.5
+    }
+  },
+  "results": {
+    "total_samples": 1,
+    "completed_samples": 1,
+    "scores": [
+      {
+        "name": "choice",
+        "scorer": "choice",
+        "params": {},
+        "metrics": {
+          "accuracy": {
+            "name": "accuracy",
+            "value": 1.0,
+            "options": {}
+          },
+          "stderr": {
+            "name": "stderr",
+            "value": 0.0,
+            "options": {}
+          }
+        }
+      }
+    ]
+  },
+  "stats": {
+    "started_at": "2024-09-09T16:06:34-04:00",
+    "completed_at": "2024-09-09T16:06:35-04:00",
+    "model_usage": {
+      "openai/gpt-4o-mini": {
+        "input_tokens": 140,
+        "output_tokens": 3,
+        "total_tokens": 143
+      }
+    }
+  },
+  "samples": [
+    {
+      "id": "rec06pnAkLOr2t2mp",
+      "epoch": 1,
+      "input": "Two quantum states with energies E1 and E2 have a lifetime of 10^-9 sec and 10^-8 sec, respectively. We want to clearly distinguish these two energy levels. Which one of the following options could be their energy difference so that they can be clearly resolved?\n",
+      "choices": [
+        "10^-4 eV",
+        "10^-11 eV",
+        "10^-8 eV\n",
+        "10^-9 eV"
+      ],
+      "target": "A",
+      "messages": [
+        {
+          "content": "Answer the following multiple choice question. The entire content of your response should be of the following format: 'ANSWER: $LETTER' (without quotes) where LETTER is one of A,B,C,D.\n\nTwo quantum states with energies E1 and E2 have a lifetime of 10^-9 sec and 10^-8 sec, respectively. We want to clearly distinguish these two energy levels. Which one of the following options could be their energy difference so that they can be clearly resolved?\n\n\nA) 10^-4 eV\nB) 10^-11 eV\nC) 10^-8 eV\n\nD) 10^-9 eV",
+          "source": "input",
+          "role": "user"
+        },
+        {
+          "content": "ANSWER: A",
+          "source": "generate",
+          "role": "assistant"
+        }
+      ],
+      "output": {
+        "model": "gpt-4o-mini-2024-07-18",
+        "choices": [
+          {
+            "message": {
+              "content": "ANSWER: A",
+              "source": "generate",
+              "role": "assistant"
+            },
+            "stop_reason": "stop"
+          }
+        ],
+        "usage": {
+          "input_tokens": 140,
+          "output_tokens": 3,
+          "total_tokens": 143
+        }
+      },
+      "scores": {
+        "choice": {
+          "value": "C",
+          "answer": "A",
+          "explanation": "Choices were shuffled before generating a response, the following was sent to the model:\n\nA) 10^-9 eV\nB) 10^-11 eV\nC) 10^-4 eV\nD) 10^-8 eV\n\nShuffled answer:\nANSWER: C"
+        }
+      },
+      "metadata": {},
+      "store": {},
+      "transcript": {
+        "events": [
+          {
+            "timestamp": "2024-09-09T16:06:34.593373-04:00",
+            "event": "sample_init",
+            "sample": {
+              "input": "tc://21b942d6054656191576ca75f3f6f438",
+              "choices": [
+                "10^-4 eV",
+                "10^-11 eV",
+                "10^-8 eV\n",
+                "10^-9 eV"
+              ],
+              "target": "A",
+              "id": "rec06pnAkLOr2t2mp"
+            },
+            "state": {
+              "messages": [
+                {
+                  "content": "tc://21b942d6054656191576ca75f3f6f438",
+                  "source": "input",
+                  "role": "user"
+                }
+              ],
+              "tools": [],
+              "tool_choice": null,
+              "store": {},
+              "output": {
+                "model": "openai/gpt-4o-mini",
+                "choices": []
+              },
+              "completed": false,
+              "metadata": {}
+            }
+          },
+          {
+            "timestamp": "2024-09-09T16:06:34.593494-04:00",
+            "event": "step",
+            "action": "begin",
+            "type": "solver",
+            "name": "multiple_choice"
+          },
+          {
+            "timestamp": "2024-09-09T16:06:35.170351-04:00",
+            "event": "model",
+            "model": "openai/gpt-4o-mini",
+            "input": [
+              {
+                "content": "tc://447639803380430aeb8f44c982ae9294",
+                "source": "input",
+                "role": "user"
+              }
+            ],
+            "tools": [],
+            "tool_choice": "none",
+            "config": {
+              "max_connections": 4,
+              "temperature": 0.5
+            },
+            "output": {
+              "model": "gpt-4o-mini-2024-07-18",
+              "choices": [
+                {
+                  "message": {
+                    "content": "ANSWER: A",
+                    "source": "generate",
+                    "role": "assistant"
+                  },
+                  "stop_reason": "stop"
+                }
+              ],
+              "usage": {
+                "input_tokens": 140,
+                "output_tokens": 3,
+                "total_tokens": 143
+              }
+            },
+            "call": {
+              "request": {
+                "messages": [
+                  {
+                    "role": "user",
+                    "content": "tc://889d68619c9c10dda6e418e4eadaa1a6"
+                  }
+                ],
+                "tools": null,
+                "tool_choice": null,
+                "model": "gpt-4o-mini",
+                "temperature": 0.5
+              },
+              "response": {
+                "id": "chatcmpl-A5ewcKFwg4dIraGU534IN1khrlbg5",
+                "choices": [
+                  {
+                    "finish_reason": "stop",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                      "content": "ANSWER: C",
+                      "refusal": null,
+                      "role": "assistant",
+                      "function_call": null,
+                      "tool_calls": null
+                    }
+                  }
+                ],
+                "created": 1725912394,
+                "model": "gpt-4o-mini-2024-07-18",
+                "object": "chat.completion",
+                "service_tier": null,
+                "system_fingerprint": "fp_483d39d857",
+                "usage": {
+                  "completion_tokens": 3,
+                  "prompt_tokens": 140,
+                  "total_tokens": 143
+                }
+              }
+            }
+          },
+          {
+            "timestamp": "2024-09-09T16:06:35.171598-04:00",
+            "event": "state",
+            "changes": [
+              {
+                "op": "replace",
+                "path": "/messages/0/content",
+                "value": "tc://447639803380430aeb8f44c982ae9294"
+              },
+              {
+                "op": "add",
+                "path": "/messages/1",
+                "value": {
+                  "content": "ANSWER: A",
+                  "source": "generate",
+                  "role": "assistant"
+                }
+              },
+              {
+                "op": "add",
+                "path": "/output/usage",
+                "value": {
+                  "input_tokens": 140,
+                  "output_tokens": 3,
+                  "total_tokens": 143
+                }
+              },
+              {
+                "op": "add",
+                "path": "/output/choices/0",
+                "value": {
+                  "message": {
+                    "content": "ANSWER: A",
+                    "source": "generate",
+                    "role": "assistant"
+                  },
+                  "stop_reason": "stop"
+                }
+              },
+              {
+                "op": "replace",
+                "path": "/output/model",
+                "value": "gpt-4o-mini-2024-07-18"
+              }
+            ]
+          },
+          {
+            "timestamp": "2024-09-09T16:06:35.171651-04:00",
+            "event": "step",
+            "action": "end",
+            "type": "solver",
+            "name": "multiple_choice"
+          },
+          {
+            "timestamp": "2024-09-09T16:06:35.171727-04:00",
+            "event": "step",
+            "action": "begin",
+            "type": "scorer",
+            "name": "choice"
+          },
+          {
+            "timestamp": "2024-09-09T16:06:35.171851-04:00",
+            "event": "score",
+            "score": {
+              "value": "C",
+              "answer": "A",
+              "explanation": "Choices were shuffled before generating a response, the following was sent to the model:\n\nA) 10^-9 eV\nB) 10^-11 eV\nC) 10^-4 eV\nD) 10^-8 eV\n\nShuffled answer:\nANSWER: C"
+            }
+          },
+          {
+            "timestamp": "2024-09-09T16:06:35.171984-04:00",
+            "event": "step",
+            "action": "end",
+            "type": "scorer",
+            "name": "choice"
+          }
+        ],
+        "content": {
+          "21b942d6054656191576ca75f3f6f438": "Two quantum states with energies E1 and E2 have a lifetime of 10^-9 sec and 10^-8 sec, respectively. We want to clearly distinguish these two energy levels. Which one of the following options could be their energy difference so that they can be clearly resolved?\n",
+          "447639803380430aeb8f44c982ae9294": "Answer the following multiple choice question. The entire content of your response should be of the following format: 'ANSWER: $LETTER' (without quotes) where LETTER is one of A,B,C,D.\n\nTwo quantum states with energies E1 and E2 have a lifetime of 10^-9 sec and 10^-8 sec, respectively. We want to clearly distinguish these two energy levels. Which one of the following options could be their energy difference so that they can be clearly resolved?\n\n\nA) 10^-4 eV\nB) 10^-11 eV\nC) 10^-8 eV\n\nD) 10^-9 eV",
+          "889d68619c9c10dda6e418e4eadaa1a6": "Answer the following multiple choice question. The entire content of your response should be of the following format: 'ANSWER: $LETTER' (without quotes) where LETTER is one of A,B,C,D.\n\nTwo quantum states with energies E1 and E2 have a lifetime of 10^-9 sec and 10^-8 sec, respectively. We want to clearly distinguish these two energy levels. Which one of the following options could be their energy difference so that they can be clearly resolved?\n\n\nA) 10^-9 eV\nB) 10^-11 eV\nC) 10^-4 eV\nD) 10^-8 eV\n"
+        }
+      }
+    }
+  ]
+}
