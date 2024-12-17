@@ -1,13 +1,12 @@
 from inspect_ai import Task, task
 from inspect_ai.dataset import MemoryDataset, Sample
-from inspect_ai.scorer import Metric, Score, Target, metric, scorer
+from inspect_ai.scorer import Metric, Score, Target, Value, metric, scorer
 from inspect_ai.solver import TaskState
 
 
 @metric
 def my_metric() -> Metric:
-    # I needed to broaden the type declaration to make mypy happy :(
-    def metric(scores: list[Score]) ->  dict[str, str | int | float | bool | None]:
+    def metric(scores: list[Score]) ->  Value:
         # I would want this to return something like the following
         # Assume there were 100 samples
         return {
@@ -38,7 +37,7 @@ def my_score():
 
 
 @task
-def my_task():
+def simple_dict_metric():
     return Task(
         dataset=MemoryDataset([Sample(input="")]),
         scorer=my_score(),

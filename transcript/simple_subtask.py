@@ -16,7 +16,7 @@ def subtask_solver() -> Solver:
     return solve
 
 @task
-def mytask():
+def simple_subtask():
     return Task(
         dataset=MemoryDataset([Sample(input="as")]),
         plan=[

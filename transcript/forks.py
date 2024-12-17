@@ -54,7 +54,7 @@ def fork_solver_child3(id: str) -> Solver:
 
 ### TASK ###
 @task
-def mytask():
+def forks():
     return Task(
         dataset=MemoryDataset([Sample(input="")]),
         plan=[

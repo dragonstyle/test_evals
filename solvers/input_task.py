@@ -4,7 +4,6 @@ from inspect_ai.model import ChatMessageUser
 from inspect_ai.scorer import model_graded_fact
 from inspect_ai.solver import Generate, Solver, TaskState, generate, solver
 from inspect_ai.util import input_screen
-from inspect_ai.log import transcript
 
 
 @task

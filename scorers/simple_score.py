@@ -2,8 +2,6 @@ from inspect_ai import Task, task
 from inspect_ai.dataset import Sample
 from inspect_ai.scorer import match
 from inspect_ai.solver import basic_agent, prompt_template
-from inspect_ai.tool import python
-from inspect_ai.model import GenerateConfig
 
 
 template_prompt = """

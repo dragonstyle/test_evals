@@ -12,7 +12,7 @@ def browser(foo: list[str] | None = None, bar: dict[str, Any] | None = None, key
     return Task(
         dataset=[
             Sample(
-                input="Use the web browser tool to navigate to a very cool website on the internet. Then, report the 5 best links that appear on that page."
+                input="Use the web browser tool to navigate to a very cool website on the internet. Then, report the 5 best links that appear on that page. Please be sure to use the tools that you are provided."
             )
         ],
         solver=[

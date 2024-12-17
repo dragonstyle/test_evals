@@ -11,7 +11,7 @@ from inspect_ai.solver import TaskState
 import numpy as numpy
 
 @task
-def test_json():
+def nan_task():
   return Task(
         dataset=[Sample(input="Say hello.")],
         plan=[

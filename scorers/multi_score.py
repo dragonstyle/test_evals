@@ -41,7 +41,11 @@ def numeric_scorer():
         # return score
         return Score(
             value = value,
-            answer=answer
+            answer=answer,
+            metadata={
+               "hello": "world",
+               "goodbye": ["john", "kate", "ann"]
+            }
         )
 
     return score

@@ -15,7 +15,7 @@ Once you have a drawing of {prompt} that you are happy with, submit a copy of th
 """
 
 @task
-def test_task_tools():
+def ascii_art_python():
   return Task(
         dataset=[Sample(input="car", target="car"), Sample(input="bike", target="bike"), Sample(input="circle", target="circle")],
         solver=basic_agent(
@@ -26,5 +26,5 @@ def test_task_tools():
         scorer=model_graded_qa(model='openai/gpt-4o-mini', instructions='Please check if the answer contains an ascii drawing of a {criterion}. Carefully judge if the work produce a high quality ascii art representation of a {crtieron}. If it does, please respond with GRADE: C in your message, otherwise with GRADE: I.'),
         sandbox="docker",
         max_messages=25,
-        epochs=3
+        epochs=1
     )
