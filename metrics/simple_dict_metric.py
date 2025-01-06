@@ -39,6 +39,6 @@ def my_score():
 @task
 def simple_dict_metric():
     return Task(
-        dataset=MemoryDataset([Sample(input="")]),
+        dataset=MemoryDataset([Sample(input="Say hello.")]),
         scorer=my_score(),
     )

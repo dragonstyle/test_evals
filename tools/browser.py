@@ -21,7 +21,7 @@ def browser(foo: list[str] | None = None, bar: dict[str, Any] | None = None, key
         ],
         scorer=includes(),
         sandbox="docker",
-        epochs=3
+        epochs=1
     )
 
 
